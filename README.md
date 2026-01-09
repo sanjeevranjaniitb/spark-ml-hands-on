@@ -2,9 +2,9 @@
 
 ## Overview
 
-This comprehensive tutorial demonstrates **Apache Spark from basics to advanced Machine Learning** in a structured format. Perfect for technical interviews, team training, or production readiness assessment.
+This comprehensive tutorial demonstrates **Apache Spark from basics to advanced Machine Learning** in a structured format. 
 
-**Target Audience**: Data Engineers, ML Engineers, Backend Engineers preparing for big-tech interviews
+**Target Audience**: Data Engineers, ML Engineers, Backend Engineers learning distributed machine learning
 
 ---
 
@@ -157,7 +157,7 @@ python web_ui_with_models.py
 | 7 | Hyperparameter Tuning | Cross-Validation, Grid Search |
 | 8 | Clustering & Recommendations | K-Means, ALS Matrix Factorization |
 | 9 | Performance & Production | Caching, Optimization, Scaling |
-| 10 | Q&A & Wrap-up | Interview Tips, Best Practices |
+| 10 | Q&A & Wrap-up | Summary, Best Practices |
 
 ---
 
@@ -592,48 +592,6 @@ val loadedModel = PipelineModel.load("models/churn_model")
 
 ---
 
-## Interview Readiness Checklist
-
-After this demo, you should confidently explain:
-
-**Spark Architecture**:
-- Driver vs Executor roles
-- Lazy evaluation benefits
-- RDD vs DataFrame trade-offs
-
-**ML Pipeline Design**:
-- Feature engineering best practices
-- Train/validation/test split strategies
-- Cross-validation for model selection
-
-**Performance Optimization**:
-- When to cache data
-- Partition strategy selection
-- Join optimization techniques
-
-**Production Deployment**:
-- Model versioning and persistence
-- Monitoring and drift detection
-- Scaling considerations
-
----
-
-## Common Interview Questions & Answers
-
-**Q: "How does Spark handle data skew?"**
-A: Adaptive Query Execution automatically detects skew and applies techniques like broadcast joins, dynamic partition pruning, and skew join optimization.
-
-**Q: "When would you use RDDs vs DataFrames?"**
-A: DataFrames for structured data with schema (90% of cases). RDDs for unstructured data or when you need fine-grained control over partitioning.
-
-**Q: "How do you handle categorical features with many categories?"**
-A: Use StringIndexer with frequency-based indexing, consider feature hashing for extremely high cardinality, or apply dimensionality reduction techniques.
-
-**Q: "What's the difference between cache() and persist()?"**
-A: cache() uses default storage level (MEMORY_AND_DISK). persist() allows you to specify storage level (memory only, disk only, serialized, etc.).
-
----
-
 ## Running the Complete Demo
 
 ```bash
@@ -641,34 +599,14 @@ A: cache() uses default storage level (MEMORY_AND_DISK). persist() allows you to
 export JAVA_HOME=$(/usr/libexec/java_home -v 11)
 
 # Run complete demo sequence
-sbt "runMain com.tutorial.SparkSessionFactory"
 sbt "runMain com.tutorial.FeatureEngineering"
 sbt "runMain com.tutorial.ClassificationPipeline"
-sbt "runMain com.tutorial.RegressionPipeline"
 sbt "runMain com.tutorial.HyperParameterTuning"
-sbt "runMain com.tutorial.ClusteringExample"
 sbt "runMain com.tutorial.RecommendationExample"
 
 # Spark fundamentals
 sbt "runMain com.tutorial.spark.SparkFundamentals"
-sbt "runMain com.tutorial.spark.OptimizationTechniques"
 ```
 
 ---
 
-## Final Advice for Success
-
-**Technical Mastery**:
-- Understand the **why** behind each concept, not just the **how**
-- Practice explaining trade-offs and design decisions
-- Focus on **system thinking at scale**
-
-**Interview Strategy**:
-- Start with high-level architecture, then dive into implementation
-- Discuss performance implications of each choice
-- Mention production considerations (monitoring, scaling, maintenance)
-
-**Key Differentiator**:
-> Spark ML success comes from understanding **distributed systems principles** more than individual algorithms.
-
-This comprehensive guide provides everything needed for a successful Spark ML demonstration, from fundamental concepts to production-ready implementations.
