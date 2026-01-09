@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%msg%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <!-- Suppress Hadoop noise -->
+        <Logger name="org.apache.hadoop" level="ERROR" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Logger>
+        
+        <!-- Suppress Spark noise -->
+        <Logger name="org.apache.spark" level="ERROR" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Logger>
+        
+        <!-- Suppress Hive noise -->
+        <Logger name="org.apache.hive" level="ERROR" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Logger>
+        
+        <!-- Suppress Parquet noise -->
+        <Logger name="org.apache.parquet" level="ERROR" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Logger>
+        
+        <!-- Show our application logs -->
+        <Logger name="com.tutorial" level="INFO" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Logger>
+        
+        <Root level="ERROR">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>
